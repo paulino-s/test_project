@@ -1,4 +1,6 @@
 <h1>Lista de productos<h1>
+    <%= link_to "Nuevo producto", products_new_path %>
+ 
 <table>
     <tr>
         <thead>
@@ -13,9 +15,9 @@
         <td><%= product.description%></td>
         <td><%= product.price%></td>
         <td>
-            <%= link_to "Mostrar"%>
-            <%= link_to "Editar"%>
-            <%= link_to "Eliminar"%>
+            <!-- <%= link_to "Mostrar"%> -->
+            <%= link_to "Editar", edit_product_path(product) %>
+            <%= link_to "Eliminar", product, method: :delete, data: { confirm: "Deseas borrar el articulo?"} %>
         
         </td>
     </tr>
